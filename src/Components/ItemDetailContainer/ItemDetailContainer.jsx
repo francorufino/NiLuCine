@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 // const ItemDetailContainer = () => {
 //   return <div>ItemDetailContainer</div>;
@@ -6,32 +6,44 @@ import React from 'react';
 
 // export default ItemDetailContainer;
 
-import { useEffect, useState } from 'react';
-import ItemDetail from '../ItemDetail/ItemDetail';
+// import { useEffect, useState } from 'react';
+// import ItemDetail from '../ItemDetail/ItemDetail';
 
-const itemMock = {
-  id: '1',
-  name: 'Producto',
-  description: 'Descripcion del producto',
-  price: 15000,
-  photo: '../../Assets/Images/hotdogbeeffranks.jpeg',
-};
+// const itemMock = {
+//   id: '1',
+//   name: 'Producto',
+//   description: 'Descripcion del producto',
+//   price: 15000,
+//   photo: '../../Assets/Images/hotdogbeeffranks.jpeg',
+// };
+
+// const ItemDetailContainer = () => {
+//   const [item, setItem] = useState(null);
+//   useEffect(() => {
+//     new Promise((resolve) =>
+//       setTimeout(() => {
+//         resolve(itemMock);
+//       }, 2000),
+//     ).then((data) => setItem(data));
+//   }, []);
+//   if (!item) {
+//     return <p>Loading...</p>;
+//   }
+//   return <ItemDetail item={item} />;
+// };
+
+// export default ItemDetailContainer;
+
+import React from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState(null);
-  useEffect(() => {
-    new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(itemMock);
-      }, 2000),
-    ).then((data) => setItem(data));
-  }, []);
-
-  if (!item) {
-    return <p>Loading...</p>;
-  }
-
-  return <ItemDetail item={item} />;
+  return (
+    <div>
+      <p>t-shirt</p>
+      <ItemCount />
+    </div>
+  );
 };
 
 export default ItemDetailContainer;
