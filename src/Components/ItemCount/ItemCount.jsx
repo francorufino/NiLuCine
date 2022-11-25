@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import './ItemCount.css';
 
 function ItemCount() {
   const stock = 5;
   const [click, setClick] = useState(0);
 
-  function newClick() {
+  useEffect(() => {
     if (click >= stock) {
-      const boton = document.getElementById('btnAddCart');
-      boton.classList.add('disable');
-    } else {
-      setClick(click + 1);
+      const greater = document.getElementById('btnAddCart');
+      greater.classList.add('disable');
     }
-  }
+  }, [click]);
 
   return (
     <div>
       <p>Number of clicks: {click}</p>
-      <button id="btnAddCart" onClick={newClick}>
+      <button id="btnAddCart" onClick={() => setClick(click + 1)}>
         Add to cart
       </button>
     </div>
