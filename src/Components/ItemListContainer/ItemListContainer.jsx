@@ -47,9 +47,16 @@
 // export default GreetingItemListContainer;
 
 import React from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import './ItemListContainer.css';
 
 const ItemListContainer = () => {
-  return <div>ItemListContainer</div>;
+  return (
+    <div id="itemlistcontainer">
+      <p>This is Item list container</p>
+      <ItemCount />
+    </div>
+  );
 };
 
 export default ItemListContainer;

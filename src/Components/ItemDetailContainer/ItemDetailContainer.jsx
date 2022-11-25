@@ -35,13 +35,13 @@
 // export default ItemDetailContainer;
 
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
+import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {
   return (
-    <div>
+    <div id="itemdetailcontainer">
+      <p>This is item detail container</p>
       <p>t-shirt</p>
-      <ItemCount />
     </div>
   );
 };
