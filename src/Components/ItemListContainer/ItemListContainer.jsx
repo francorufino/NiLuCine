@@ -46,15 +46,46 @@
 
 // export default GreetingItemListContainer;
 
-import React from 'react';
+import React, { useState } from 'react';
+import Item from '../Item/Item';
 import ItemCount from '../ItemCount/ItemCount';
+import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
+const productos = [
+  {
+    id: '1',
+    name: 'Keyboard',
+    description: 'Keyboard Description',
+    stock: 5,
+    img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
+  },
+  {
+    id: '2',
+    name: 'Mouse',
+    description: 'Mouse Description',
+    stock: 2,
+    img: 'https://m.media-amazon.com/images/I/6144nG08-iL._AC_SX679_.jpg',
+  },
+];
+
 const ItemListContainer = () => {
+  const [products, setProducts] = useState([]);
+
+  const productList = new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(productos);
+    }, 3000),
+  );
+
+  productList.then((data) => setProducts(data));
+
+  console.log(products);
+
   return (
     <div id="itemlistcontainer">
       <p>This is Item list container</p>
-      <ItemCount />
+      <ItemList products={products} />
     </div>
   );
 };

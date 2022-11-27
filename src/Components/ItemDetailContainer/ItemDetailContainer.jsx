@@ -34,14 +34,45 @@
 
 // export default ItemDetailContainer;
 
-import React from 'react';
+import React, { useState } from 'react';
 import './ItemDetailContainer.css';
+import ItemDetail from '../ItemDetail/ItemDetail';
+
+const item = [
+  {
+    id: '1',
+    name: 'kkkkkkkkkk',
+    description: 'Keyboard Description',
+    stock: 5,
+    img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
+  },
+  {
+    id: '2',
+    name: 'mmmmmmmmmmmm',
+    description: 'Mouse Description',
+    stock: 2,
+    img: 'https://m.media-amazon.com/images/I/6144nG08-iL._AC_SX679_.jpg',
+  },
+];
 
 const ItemDetailContainer = () => {
+  const [productsD, setProductsD] = useState([]);
+
+  const productDetails = new Promise((resolve, reject) =>
+    setTimeout(() => {
+      resolve(item);
+    }, 2000),
+  );
+
+  productDetails.then((data) => setProductsD(data));
+
+  console.log(productsD);
+
   return (
     <div id="itemdetailcontainer">
       <p>This is item detail container</p>
       <p>t-shirt</p>
+      <ItemDetail productsD={productsD} />
     </div>
   );
 };
