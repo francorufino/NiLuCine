@@ -42,7 +42,7 @@ import { useEffect } from 'react';
 const item = [
   {
     id: '1',
-    name: 'kkkkkkkkkk',
+    name: 'Keyboard Title',
     description: 'Keyboard Description',
     price: 500,
     stock: 5,
@@ -50,7 +50,7 @@ const item = [
   },
   {
     id: '2',
-    name: 'mmmmmmmmmmmm',
+    name: 'Mouse Title',
     description: 'Mouse Description',
     stock: 2,
     price: 25,
@@ -82,7 +82,7 @@ const ItemDetailContainer = () => {
   return (
     <div id="itemdetailcontainer">
       <p>This is item detail container</p>
-      <p>t-shirt</p>
+
       <ItemDetail productsD={productsD} />
     </div>
   );

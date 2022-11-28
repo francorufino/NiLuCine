@@ -3,8 +3,8 @@ import Item from '../Item/Item';
 
 const ItemDetail = ({ productsD }) => {
   return (
-    <div>
-      <p>Eu sou o item detail</p>
+    <div id="itemDetail">
+      <p>This is Item Detail</p>
       <ul className="containerProduct">
         {productsD.map((productD) => (
           <Item product={productD} />

@@ -8,7 +8,6 @@ function App() {
     <main className="App">
       <Navbar />
       <ItemListContainer />
-      <ItemDetailContainer />
     </main>
   );
 }
