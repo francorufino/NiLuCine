@@ -37,12 +37,14 @@
 import React, { useState } from 'react';
 import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { useEffect } from 'react';
 
 const item = [
   {
     id: '1',
     name: 'kkkkkkkkkk',
     description: 'Keyboard Description',
+    price: 500,
     stock: 5,
     img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
   },
@@ -51,6 +53,7 @@ const item = [
     name: 'mmmmmmmmmmmm',
     description: 'Mouse Description',
     stock: 2,
+    price: 25,
     img: 'https://m.media-amazon.com/images/I/6144nG08-iL._AC_SX679_.jpg',
   },
 ];
@@ -58,15 +61,23 @@ const item = [
 const ItemDetailContainer = () => {
   const [productsD, setProductsD] = useState([]);
 
-  const productDetails = new Promise((resolve, reject) =>
-    setTimeout(() => {
-      resolve(item);
-    }, 2000),
-  );
+  // useEffect(() => {
+  //   fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+  //     .then((data) => data.json())
+  //     .then((data) => setPokemonList(data.results));
+  // }, []);
 
-  productDetails.then((data) => setProductsD(data));
+  useEffect(() => {
+    const productDetails = new Promise((resolve, reject) =>
+      setTimeout(() => {
+        resolve(item);
+      }, 4000),
+    );
 
-  console.log(productsD);
+    productDetails.then((data) => setProductsD(data));
+  }, [productsD]);
+
+  // console.log(productsD);
 
   return (
     <div id="itemdetailcontainer">

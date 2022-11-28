@@ -16,8 +16,12 @@ const Item = ({ product }) => {
     <div>
       <img src={product.img} />
       <li>{product.name}</li>
+      <li>{product.description}</li>
+      <li>U$ {product.price}</li>
     </div>
   );
 };
 
 export default Item;
+
+//how do I use the product price here, but when I dont have a price, in one of the components, I do not show it in the view?
