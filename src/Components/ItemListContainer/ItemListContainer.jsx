@@ -49,7 +49,7 @@
 import React, { useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import { item } from '../Mocks/ItemMock/ItemMock';
+import { item } from '../../Mocks/ItemMock/ItemMock';
 import { useEffect } from 'react';
 
 // const productos = [
