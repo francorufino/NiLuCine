@@ -1,11 +1,11 @@
 import { Layout } from '../Components/Layout/Layout';
 
-const CategoryView = () => {
+const ItemView = () => {
   return (
     <Layout>
-      <h1>Category view</h1>
+      <h1>Item view</h1>
     </Layout>
   );
 };
 
-export default CategoryView;
+export default ItemView;
