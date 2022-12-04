@@ -1,5 +1,6 @@
 #itemlistcontainer{
   background-color: burlywood;
+  border: 5px solid blue;
 }
 
 img{

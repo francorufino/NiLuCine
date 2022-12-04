@@ -1,13 +1,16 @@
 import React from 'react';
 import Item from '../Item/Item';
+import './ItemDetail.css';
 
-const ItemDetail = ({ productsD }) => {
+const ItemDetail = ({ item }) => {
+  console.log(item);
   return (
-    <div id="itemDetail">
+    <div id="itemdetail">
       <p>This is Item Detail</p>
       <ul className="containerProduct">
-        {productsD.map((productD) => (
-          <Item product={productD} />
+        <p>teste</p>
+        {item.map((item) => (
+          <Item item={item} />
         ))}
       </ul>
     </div>

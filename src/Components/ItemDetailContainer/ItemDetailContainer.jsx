@@ -1,65 +1,9 @@
-// import React from 'react';
-
-// const ItemDetailContainer = () => {
-//   return <div>ItemDetailContainer</div>;
-// };
-
-// export default ItemDetailContainer;
-
-// import { useEffect, useState } from 'react';
-// import ItemDetail from '../ItemDetail/ItemDetail';
-
-// const itemMock = {
-//   id: '1',
-//   name: 'Producto',
-//   description: 'Descripcion del producto',
-//   price: 15000,
-//   photo: '../../Assets/Images/hotdogbeeffranks.jpeg',
-// };
-
-// const ItemDetailContainer = () => {
-//   const [item, setItem] = useState(null);
-//   useEffect(() => {
-//     new Promise((resolve) =>
-//       setTimeout(() => {
-//         resolve(itemMock);
-//       }, 2000),
-//     ).then((data) => setItem(data));
-//   }, []);
-//   if (!item) {
-//     return <p>Loading...</p>;
-//   }
-//   return <ItemDetail item={item} />;
-// };
-
-// export default ItemDetailContainer;
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { useEffect } from 'react';
 
-const item = [
-  {
-    id: '1',
-    name: 'Keyboard Title',
-    description: 'Keyboard Description',
-    price: 500,
-    stock: 5,
-    img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
-  },
-  {
-    id: '2',
-    name: 'Mouse Title',
-    description: 'Mouse Description',
-    stock: 2,
-    price: 25,
-    img: 'https://m.media-amazon.com/images/I/6144nG08-iL._AC_SX679_.jpg',
-  },
-];
-
-const ItemDetailContainer = () => {
-  const [productsD, setProductsD] = useState([]);
+const ItemDetailContainer = ({ products }) => {
+  const [itemDC, setItemDC] = useState(null);
 
   // useEffect(() => {
   //   fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
@@ -68,22 +12,22 @@ const ItemDetailContainer = () => {
   // }, []);
 
   useEffect(() => {
-    const productDetails = new Promise((resolve, reject) =>
+    new Promise((resolve, reject) =>
       setTimeout(() => {
-        resolve(item);
+        resolve(products);
       }, 4000),
-    );
+    ).then((data) => setItemDC(data));
+  }, []);
 
-    productDetails.then((data) => setProductsD(data));
-  }, [productsD]);
-
-  // console.log(productsD);
+  if (!itemDC) {
+    return <p>Loading ItemDetailContainer...</p>;
+  }
 
   return (
     <div id="itemdetailcontainer">
       <p>This is item detail container</p>
 
-      <ItemDetail productsD={productsD} />
+      <ItemDetail item={itemDC} />
     </div>
   );
 };

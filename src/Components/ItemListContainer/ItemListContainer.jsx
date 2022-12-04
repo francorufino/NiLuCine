@@ -47,40 +47,42 @@
 // export default GreetingItemListContainer;
 
 import React, { useState } from 'react';
-import Item from '../Item/Item';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
+import { item } from '../Mocks/ItemMock/ItemMock';
+import { useEffect } from 'react';
 
-const productos = [
-  {
-    id: '1',
-    name: 'Keyboard',
-    description: 'Keyboard Description',
-    stock: 5,
-    img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
-  },
-  {
-    id: '2',
-    name: 'Mouse',
-    description: 'Mouse Description',
-    stock: 2,
-    img: 'https://m.media-amazon.com/images/I/6144nG08-iL._AC_SX679_.jpg',
-  },
-];
+// const productos = [
+//   {
+//     id: '1',
+//     name: 'Keyboard',
+//     description: 'Keyboard Description',
+//     stock: 5,
+//     img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
+//   },
+//   {
+//     id: '2',
+//     name: 'Mouse',
+//     description: 'Mouse Description',
+//     stock: 2,
+//     img: 'https://m.media-amazon.com/images/I/6144nG08-iL._AC_SX679_.jpg',
+//   },
+// ];
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
-  const productList = new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(productos);
-    }, 3000),
-  );
+  useEffect(() => {
+    new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(item);
+      }, 3000),
+    ).then((data) => setProducts(data));
+  }, []);
 
-  productList.then((data) => setProducts(data));
-
-  console.log(products);
+  if (products.length === 0) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div id="itemlistcontainer">

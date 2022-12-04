@@ -11,13 +11,13 @@
 
 import React from 'react';
 
-const Item = ({ product }) => {
+const Item = ({ item }) => {
   return (
     <div>
-      <img src={product.img} />
-      <li>{product.name}</li>
-      <li>{product.description}</li>
-      <li>U$ {product.price}</li>
+      {/* <img src={item.img} /> */}
+      <li>{item.name}</li>
+      <li>{item.description}</li>
+      <li>U$ {item.price}</li>
     </div>
   );
 };
