@@ -9,32 +9,23 @@ import CartWidget from '../CartWidget/CartWidget';
 
 const Navbarr = () => {
   return (
-    <BrowserRouter>
-      <Navbar bg="danger" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">NiLuCine</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
-              Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/tvshows">
-              TV Shows
-            </Nav.Link>
-            <Nav.Link as={Link} to="/movies">
-              Movies
-            </Nav.Link>
-          </Nav>
-          <CartWidget />
-        </Container>
-      </Navbar>
-
-      <div>
-        <Routes>
-          <Route path="/tvshows" element={<TVShows />} />
-          <Route path="/movies" element={<Movies />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <Navbar bg="danger" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">NiLuCine</Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link as={Link} to="/">
+            Home
+          </Nav.Link>
+          <Nav.Link as={Link} to="/tvshows">
+            TV Shows
+          </Nav.Link>
+          <Nav.Link as={Link} to="/movies">
+            Movies
+          </Nav.Link>
+        </Nav>
+        <CartWidget />
+      </Container>
+    </Navbar>
   );
 };
 
