@@ -2,13 +2,10 @@
 white = #e1e1e1
 red = #dc1a10
 whiteBright = #ffffff */
-
-
-html {
-  margin: 0px;
+*, *::before, *::after{
+box-sizing: border-box;
+ margin: 0px;
   padding: 0px;
-  background: #5f5f5f;
-  color: #e1e1e1;
 }
 
 li{

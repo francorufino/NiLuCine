@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Layout } from '../Layout/Layout';
 import './Movies.css';
 
 function Movies() {
@@ -11,14 +12,14 @@ function Movies() {
   }, []);
 
   return (
-    <div>
+    <Layout>
       <h1>This is movies page</h1>
       <ul>
         {pokemonList.map((pokemon) => (
           <li>{pokemon.name}</li>
         ))}
       </ul>
-    </div>
+    </Layout>
   );
 }
 

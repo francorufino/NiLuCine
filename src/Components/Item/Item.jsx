@@ -10,15 +10,19 @@
 // export default Item;
 
 import React from 'react';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 const Item = ({ item }) => {
   return (
-    <div>
-      {/* <img src={item.img} /> */}
-      <li>{item.name}</li>
-      <li>{item.description}</li>
-      <li>U$ {item.price}</li>
-    </div>
+    <section>
+      <ul>
+        <img src={item.img} />
+        <li>{item.name}</li>
+        <li>{item.description}</li>
+        <li>U$ {item.price}</li>
+      </ul>
+      {/* <button onClick={<ItemDetailContainer />}>Detail</button> */}
+    </section>
   );
 };
 

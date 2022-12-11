@@ -1,11 +1,12 @@
 import React from 'react';
 import './TVShows.css';
+import { Layout } from '../Layout/Layout';
 
 const TVShows = () => {
   return (
-    <div>
-      <h1>This is TV Shows page</h1>
-    </div>
+    <Layout>
+      <h1>TV Shows</h1>
+    </Layout>
   );
 };
 

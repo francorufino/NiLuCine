@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import TVShows from '../TVShows/TVShows';
 import Movies from '../Movies/Movies';
 import CartWidget from '../CartWidget/CartWidget';
@@ -21,6 +21,15 @@ const Navbarr = () => {
           </Nav.Link>
           <Nav.Link as={Link} to="/movies">
             Movies
+          </Nav.Link>
+          <Nav.Link as={Link} to="/category/keyboard">
+            Keyboard
+          </Nav.Link>
+          <Nav.Link as={Link} to="/category/mouse">
+            Mouse
+          </Nav.Link>
+          <Nav.Link as={Link} to="/item/555">
+            Item
           </Nav.Link>
         </Nav>
         <CartWidget />

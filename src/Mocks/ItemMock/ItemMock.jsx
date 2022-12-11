@@ -4,6 +4,17 @@ export const item = [
   {
     id: '1',
     name: 'Keyboard',
+    category: 'keyboard',
+    price: 1000,
+    description: 'Keyboard Description',
+    stock: 5,
+    img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
+  },
+  {
+    id: '3',
+    name: 'Keyboard',
+    category: 'keyboard',
+    price: 1000,
     description: 'Keyboard Description',
     stock: 5,
     img: 'https://m.media-amazon.com/images/I/715XLKbQnFL._AC_SX679_.jpg',
@@ -11,6 +22,8 @@ export const item = [
   {
     id: '2',
     name: 'Mouse',
+    category: 'mouse',
+    price: 500,
     description: 'Mouse Description',
     stock: 2,
     img: 'https://m.media-amazon.com/images/I/6144nG08-iL._AC_SX679_.jpg',
